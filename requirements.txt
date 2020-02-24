@@ -2,3 +2,4 @@ pyqtgraph
 pyusb
 numpy
 scipy
+pyshortcuts
