@@ -941,6 +941,7 @@ def get_backend(find_library=None):
     try:
         if _lib is None:
             _lib = _load_library(find_library=find_library)
+            print(_lib)
             _setup_prototypes(_lib)
         return _LibUSB(_lib)
     except usb.libloader.LibraryException:

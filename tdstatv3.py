@@ -609,8 +609,11 @@ def update_live_graph():
 def choose_file(file_entry_field, questionstring):
 	"""Open a file dialog and write the path of the selected file to a given entry field."""
 	filedialog = QtGui.QFileDialog()
-	file_entry_field.setText(filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtGui.QFileDialog.DontConfirmOverwrite))
-
+	tuple_file = filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtGui.QFileDialog.DontConfirmOverwrite)
+	file_name = tuple_file[0]
+	#print(file_name)
+	file_entry_field.setText(file_name)
+	
 def toggle_logging(checkbox_state):
 	"""Enable or disable logging of measurements to a file based on the state of a checkbox (2 means checked)."""
 	global logging_enabled
